@@ -1,8 +1,13 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(slide) -%>">
-  <span class='title'>
-    <%= slide.title %>
-
+  <span class='thumbnail'>
+    <%= image_fu slide.image, '100x50#' %>
   </span>
+  <span class='title'>
+    <strong><%= slide.title %></strong>
+  </span>
+  <% if slide.hidden? -%>
+    <span class='hidden'><em>Hidden</em></span>
+  <% end -%>
   <span class='actions'>
     
     <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_slides_admin_slide_path(slide),
