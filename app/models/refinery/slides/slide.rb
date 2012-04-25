@@ -13,6 +13,9 @@ module Refinery
 
       scope :active, :conditions => {:hidden => false}
       scope :by_position, :order => "position ASC"
+
+      def hidden?; self.hidden; end
+      def active?; not hidden?; end
         
     end
   end
