@@ -12,11 +12,11 @@ module Refinery
 
       attr_accessible :title, :link, :content, :image_id, :hidden, :position
 
-      scope :active, :conditions => {:hidden => false}
-      scope :by_position, :order => "position ASC"
-
       def hidden?; self.hidden; end
       def active?; not hidden?; end
+      
+      def self.active; where(:hidden => false); end
+      def self.by_position; order("position ASC"); end
         
     end
   end
