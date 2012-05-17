@@ -14,6 +14,7 @@ module Refinery
 
       def hidden?; self.hidden; end
       def active?; not hidden?; end
+      def link?; not link.blank?; end
       
       def self.active; where(:hidden => false); end
       def self.by_position; order("position ASC"); end
