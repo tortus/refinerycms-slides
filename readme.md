@@ -14,8 +14,8 @@ is a simple RefineryCMS extension to add user-friendly slider management.
 
 ## Usage
 
-Includes Nivo Slider, but can be used with most slider scripts. Typically you will
-want to do something like this on the template with the slider:
+There aren't any partials or helpers to learn, since every slider is different.
+Typically you will want to do something like this on the template with the slider:
 
 ```ruby
 ::Refinery::Slides::Slide.active.by_position.each do |slide|
@@ -30,3 +30,13 @@ Slides have the following columns, for use in whatever way seems best:
 * image (refinery image)
 * content (text)
 * hidden (boolean)
+
+## Nivo Slider
+
+Assets for the popular Nivo Slider are included. To use:
+
+    application.js:
+    //= require jquery.nivo.slider
+
+    application.css:
+    *= require nivo-slider.css
