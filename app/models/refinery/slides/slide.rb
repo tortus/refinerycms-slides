@@ -17,6 +17,7 @@ module Refinery
       def link?; not link.blank?; end
 
       def self.active; where(:hidden => false); end
+      def self.live; active; end
       def self.by_position; order("position ASC"); end
       def self.by_random; order("random()"); end
 
