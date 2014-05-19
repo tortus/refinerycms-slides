@@ -5,15 +5,15 @@ Gem::Specification.new do |s|
   s.name              = 'refinerycms-slides'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Slides extension for Refinery CMS'
-  s.author            = 'Tortus Technologies'
-  s.date              = '2012-04-25'
+  s.author            = 'Tortus'
+  s.date              = '2014-05-19'
   s.summary           = 'Slides extension for Refinery CMS'
   s.require_paths     = %w(lib)
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
 
   # Runtime dependencies
-  s.add_dependency             'refinerycms-core',    '~> 2.0.3'
+  s.add_dependency             'refinerycms-core',    '~> 2.1.0'
 
   # Development dependencies (usually used for testing)
-  s.add_development_dependency 'refinerycms-testing', '~> 2.0.3'
+  s.add_development_dependency 'refinerycms-testing', '~> 2.1.0'
 end
