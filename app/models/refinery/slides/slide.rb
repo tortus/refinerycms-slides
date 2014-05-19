@@ -21,6 +21,10 @@ module Refinery
       def self.by_position; order("position ASC"); end
       def self.by_random; order("random()"); end
 
+      def self.random_slide
+        live.by_random.first
+      end
+
     end
   end
 end
