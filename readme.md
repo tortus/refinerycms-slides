@@ -6,7 +6,7 @@ is a simple RefineryCMS extension to add user-friendly slider management.
 ## Installation
 
     # Gemfile:
-    gem 'refinerycms-slides', :github => 'tortus/refinerycms-slides'
+    gem 'refinerycms-slides', :github => 'tortus/refinerycms-slides', :branch => '2-1-stable'
 
     $ bundle install
     $ rails generate refinery:slides
