@@ -30,7 +30,8 @@ Refinery::PagesController.class_eval
     @slides = Refinery::Slides::Slide.live.by_position
   end
 end
-
+```
+```erb
 # app/views/refinery/pages/home.html.erb
 <% @slides.each do |slide| %>
   # Generate html for each slide.
