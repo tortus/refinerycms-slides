@@ -9,6 +9,7 @@ is a simple RefineryCMS extension to add user-friendly slider management.
     gem 'refinerycms-slides', :github => 'tortus/refinerycms-slides'
 
     $ bundle install
+    $ rails generate refinery:slides
     $ rake db:migrate
     $ rake db:seed
 
