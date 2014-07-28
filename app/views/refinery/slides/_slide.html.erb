@@ -1,3 +1,4 @@
+<% slide = local_assigns[:slide] || @slide -%>
 <% if slide.link.present? -%><a href="<%= slide.link %>"><% end -%>
   <% if local_assigns[:geometry].present? -%>
     <%= image_fu(slide.image, local_assigns[:geometry], :alt => slide.title, :title => slide.title) -%>
