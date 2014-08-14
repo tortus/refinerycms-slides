@@ -20,6 +20,10 @@ module Refinery
         !hidden? && image.present? && live_at <= now && (down_at.blank? || now < down_at)
       end
 
+      def upcoming?
+        !hidden? && image.present? && live_at > Time.now
+      end
+
       def self.live
         where('NOT hidden AND image_id IS NOT NULL AND live_at <= :now AND (down_at IS NULL OR :now < down_at)', :now => Time.now)
       end
