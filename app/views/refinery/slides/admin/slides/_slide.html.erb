@@ -6,7 +6,11 @@
     <strong><%= slide.title %></strong> <%= "&rarr; ".html_safe + link_to(truncate(slide.link), slide.link) if slide.link.present? %>
   </span>
   <% if slide.live? -%>
+    <% if slide.down_at.present? -%>
+      <span class='label'>Down at <%= slide.down_at.strftime("%b %-d %-l:%M %p") %></span>
+    <% else -%>
       <span class='label'>Live</span>
+    <% end -%>
   <% elsif slide.upcoming? -%>
       <span class='label'>Live at <%= slide.live_at.try(:strftime, "%b %-d %-l:%M %p") %></span>
   <% elsif slide.hidden? -%>
