@@ -45,12 +45,12 @@
 
   <div class='field'>
     <%= f.label :live_at %>
-    <%= f.datetime_select :live_at, :include_blank => false %>
+    <%= f.datetime_select :live_at, :include_blank => false, :ampm => true %>
   </div>
 
   <div class='field'>
     <%= f.label :down_at %>
-    <%= f.datetime_select :down_at, :include_blank => true %>
+    <%= f.datetime_select :down_at, :include_blank => true, :ampm => true %>
   </div>
 
   <div class='field'>
