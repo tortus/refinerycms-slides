@@ -3,7 +3,7 @@
     <%= image_fu slide.image, '100x50#', :style => 'margin-bottom: -10px;' if slide.image %>
   </span>
   <span class='title'>
-    <strong><%= slide.title %></strong> <%= "&rarr; ".html_safe + link_to(slide.link, slide.link) if slide.link.present? %>
+    <strong><%= slide.title %></strong> <%= "&rarr; ".html_safe + link_to(truncate(slide.link), slide.link) if slide.link.present? %>
   </span>
   <% if slide.live? -%>
       <span class='label'>Live</span>
