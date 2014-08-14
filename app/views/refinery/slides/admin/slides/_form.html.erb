@@ -44,6 +44,16 @@
   </div>
 
   <div class='field'>
+    <%= f.label :live_at %>
+    <%= f.datetime_select :live_at, :include_blank => false %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :down_at %>
+    <%= f.datetime_select :down_at, :include_blank => true %>
+  </div>
+
+  <div class='field'>
     <%= f.label :hidden -%>
     <%= f.check_box :hidden, :checked => @slide[:hidden]  -%>
 

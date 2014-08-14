@@ -9,15 +9,28 @@ module Refinery
 
       validates :title, :presence => true, :uniqueness => true
       validates :image, :presence => true
+      validates :live_at, :presence => true
 
-      attr_accessible :title, :link, :content, :image_id, :hidden, :position
+      attr_accessible :title, :link, :content, :image_id, :hidden, :position,
+        :live_at, :down_at
 
-      def hidden?; self.hidden; end
-      def active?; not hidden?; end
+
+      def live?
+        now = Time.now
+        !hidden? && image.present? && live_at <= now && (down_at.blank? || now < down_at)
+      end
+
+      def self.live
+        where('NOT hidden AND image_id IS NOT NULL AND live_at <= :now AND (down_at IS NULL OR :now < down_at)', :now => Time.now)
+      end
+
+      def self.live_slide
+        live.by_date.first
+      end
+
       def link?; not link.blank?; end
 
-      def self.active; where(:hidden => false); end
-      def self.live; active; end
+      def self.by_date; order("live_at DESC, down_at DESC"); end
       def self.by_position; order("position ASC"); end
       def self.by_random; order("random()"); end
 
