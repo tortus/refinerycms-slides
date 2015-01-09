@@ -41,7 +41,7 @@ end
 <% end %>
 ```
 
-To fetch a random slide, use:
+To fetch a single random slide instead (postgres only), use:
 
 ```ruby
 Refinery::Slides:Slide.random_slide
