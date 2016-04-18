@@ -3,7 +3,7 @@ module Refinery
     module Admin
       class SlidesController < ::Refinery::AdminController
 
-        crudify :'refinery/slides/slide', :xhr_paging => true
+        crudify :'refinery/slides/slide', :paging => false
 
       end
     end
